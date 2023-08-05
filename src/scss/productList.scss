@@ -1,0 +1,198 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+#productList{
+    background-color: #fff;
+    position: relative;
+    // @include cPadding;
+    /* search */
+    .item{
+        @include cPadding;
+        width: $content;
+        @include margin;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: $big;
+                img{
+                    width: $big*2;
+                    height: $big*2;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid rgba(68, 68, 68, 0.1);
+                    margin-bottom: $basic*3;
+                }
+                dl{
+                    >dt{
+                        font-size: $nomal;
+                        padding-bottom: 15px;
+                        border-bottom: 1px solid rgba(68, 68, 68, 0.2);
+                        margin-bottom: $basic*2;
+                        color: $gray;
+                        text-align: center;
+                    }
+                    >dd{
+                        font-size: $large;
+                        font-weight: bold;
+                        color: $gray;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+#search{
+    width: $content;
+    @include margin;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    @include cPadding;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    >div{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 25px;
+        color: $gray;
+        input{
+            width: 90%;
+            height: $basic*4;
+            border: 1px solid rgba(1, 1, 1, 0.4);
+            padding-left: 10px;
+        }
+    }
+    .dropBox{
+        width: $basic*15;
+        position: relative;
+        button{
+            width: $basic*15;
+            height: 35px;
+            color: $gray;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid rgba(1, 1, 1, 0.4);
+        }
+        .btn{
+            position: absolute;
+            width: $basic*15;
+            right: 0; top: $basic*5;
+            background-color: #fff;
+            li{
+                padding: 15px;
+                font-size: 15px;
+                border: 1px solid rgba(1, 1, 1, 0.2);
+                color: $gray;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+  
+@include tablet {
+    #productList{
+        /* search */
+        .item{
+            width: $tcontent;
+            ul{
+                li{
+                    width: 33.33333%;
+                    img{
+                        width: $basic*16;
+                        height: $basic*16;
+                    }
+                }
+            }
+        }
+    }
+    #search{
+        width: $tcontent;
+        >div{
+            input{
+                width: 80%;
+                height: $basic*3;
+                font-size: $small;
+            }
+        }
+        .dropBox{
+            width: $basic*10;
+            .btn{
+                width: $basic*11;
+                li{
+                    padding: 15px;
+                    font-size: 13px;
+                    border: 1px solid rgba(1, 1, 1, 0.2);
+                    color: $gray;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+// 모바일
+@include mobile{
+    #productList{
+        /* search */
+        .item{
+            width: $mcontent;
+            padding: 50px 0 0 0;
+            ul{
+                li{
+                    width: 50%;
+                    img{
+                        width: $basic*16;
+                        height: $basic*16;
+                    }
+                    dl{
+                        dt{
+                            font-size: $small;
+                        }
+                        dd{
+                            font-size: $nomal;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #search{
+        width: $mcontent;
+        justify-content: space-between;
+        >div{
+            width: 80%;
+            input{
+                width: 90%;
+                margin-left: 5px;
+                height: $basic*3;
+                font-size: $small;
+            }
+        }
+        .dropBox{
+            width: $basic*4;
+            .btn{
+                width: $basic*11;
+                li{
+                    padding: 8px;
+                    font-size: 13px;
+                    border: 1px solid rgba(1, 1, 1, 0.2);
+                    color: $gray;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}

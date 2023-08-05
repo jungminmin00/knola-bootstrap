@@ -1,0 +1,31 @@
+@use './variable' as *;
+
+@mixin mobile {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin margin($bottom:0, $top:0){
+    margin: $bottom auto $top;
+}
+@mixin layout($justify:center, $direction: row){
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+@mixin cPadding(){  /* 콘텐츠 상하 여백 */
+    padding: 50px 0;
+}

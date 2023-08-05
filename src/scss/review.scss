@@ -1,0 +1,246 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+#reviews{
+    background-color: #fff;
+    >div{
+        width: $content;
+        text-align: center;
+        @include cPadding;
+        @include margin;
+        h3{
+            font-size: $title;
+            text-transform: uppercase;
+            letter-spacing:5px;
+            margin-bottom: $basic*3;
+        }
+        >p{
+            font-size: $small;
+            color: $gray;
+            margin-bottom: $basic*7;
+        }
+        >ul{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li{
+                width: 25%;
+                // height: ;
+                display: flex;
+                justify-content: center;
+                margin-bottom: $basic*5;
+                figure{
+                    width: $basic*25;
+                    display: flex;
+                    flex-direction: column;
+                    border: 1px solid rgba(1, 1, 1, 0.2);
+                    >div{
+                        width: 100%;
+                        height: $basic*25;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        overflow: hidden;
+                        border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+                        >img{
+                            width: 100%;
+                        }
+                    }
+                    figcaption{
+                        width: auto;
+                        height: $big;
+                        font-size: $small;
+                        color: $gray;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        >p{
+                            width: 70%;
+                            line-height: $basic*2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+#ReviewDetail{
+    background-color: #fff;
+    padding-top: $basic*5;
+    >div{
+        width: $content;
+        @include margin;
+        >figure{
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            text-align: center;
+            >div{
+                width: $big*4;
+                height: $big*4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgba(1, 1, 1, 0.2);
+                margin-bottom: $basic*5;
+                overflow:hidden;
+                >img{
+                    width: 100%;
+                }
+            }
+            >figcaption{
+                text-align:center;
+                >dl{
+                    margin-bottom: $basic*5;
+                    >dt{
+                        font-size: $large;
+                        margin-bottom: $basic*5;
+                        font-weight: bold;
+                    }
+                    >dd{
+                        font-size: $nomal;
+                        line-height: $basic*3;
+                    }
+                }
+                >p{
+                    button{
+                        border:none;
+                        background-color:$red;
+                        padding: $basic $basic*3;
+                        border-radius: 25px;
+                        // color:#fff;
+                        a{
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// media query
+@include tablet{
+    #reviews{
+        >div{
+            width: $tcontent;
+            >ul{
+                li{
+                    width: 33.33333%;
+                    figure{
+                        width: $basic*18;
+                        >div{
+                            height: $basic*18;
+                        }
+                        figcaption{
+                            width: auto;
+                            height: $big;
+                            >p{
+                                overflow: hidden;  		
+                                text-overflow: ellipsis;   
+                                white-space: nowrap; 		
+                                word-break:break-all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+    #ReviewDetail{
+        >div{
+            width: $tcontent;
+        }
+    }
+}
+
+
+// 모바일
+@include mobile{
+    #reviews{
+        >div{
+            width: $mcontent;
+            >ul{
+                li{
+                    width: 50%;
+                    figure{
+                        width: $basic*15;
+                        >div{
+                            height: $basic*15;
+                        }
+                        figcaption{
+                            width: auto;
+                            height: $big;
+                            >p{
+                                overflow: hidden;  		
+                                text-overflow: ellipsis;   
+                                white-space: nowrap; 		
+                                word-break:break-all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+    }
+    #ReviewDetail{
+        >div{
+            width: $mcontent;
+            >figure{
+                display: flex;
+                flex-direction: column;
+                // justify-content: center;
+                align-items: center;
+                text-align: center;
+                >div{
+                    width: $big*4;
+                    height: $big*4;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid rgba(1, 1, 1, 0.2);
+                    margin-bottom: $basic*5;
+                    overflow:hidden;
+                    >img{
+                        width: 100%;
+                    }
+                }
+                >figcaption{
+                    text-align:center;
+                    >dl{
+                        margin-bottom: $basic*5;
+                        >dt{
+                            font-size: $large;
+                            margin-bottom: $basic*5;
+                            font-weight: bold;
+                        }
+                        >dd{
+                            font-size: $nomal;
+                            line-height: $basic*3;
+                        }
+                    }
+                    >p{
+                        button{
+                            border:none;
+                            background-color:$red;
+                            padding: $basic $basic*3;
+                            border-radius: 25px;
+                            margin-bottom: $basic*5;
+                            // color:#fff;
+                            a{
+                                color:#fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

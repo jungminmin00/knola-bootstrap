@@ -1,0 +1,215 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+#product{
+    background-color: #fff;
+    >div{
+        width: $content;
+        @include margin;
+        padding-top: $basic*5;
+        >figure{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $basic*5;
+            >div{
+                width: $big*5;
+                height: $big*5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid rgba(1, 1, 1, 0.2);
+                img{
+                    width: 100%;
+                }
+            }
+            >figcaption{
+                width: 50%;
+                border-left: 1px solid rgba(1, 1, 1, 0.1);
+                text-align: center;
+                // padding: $big 0 0 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                >dl{
+                    >dt{
+                        margin-bottom: $basic*4;
+                    }
+                    >dd{
+                        margin-bottom: $big;
+                    }
+                }
+                >p{
+                    // text-align: center;
+                    >button{
+                        background-color: $red;
+                        color: #fff;
+                        border: none;
+                        font-size: $large;
+                        padding: $basic $basic*3;
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+#review{
+    padding: 0 $basic*5 0 $basic*5;
+    border-top: 1px solid rgba(1, 1, 1, 0.1);
+    li{
+        @include cPadding;
+        padding-left: $basic*5;
+        border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+        color: $gray;
+        figure{display: flex; justify-content: space-between;
+            >div{
+                width: $big;
+                background-color: #fff;
+                height: $big;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: rgba(1, 1, 1, 0.2);
+                overflow: hidden;
+                >img{
+                    width: 100%;
+                }
+            }
+            figcaption{
+                width: $big*10;
+                dl{
+                    position: relative;
+                    dt{
+                        font-size: $large;
+                        font-weight: b$basic*3;
+                        margin-bottom: $basic*3;
+                    }
+                    dd{
+                        font-size: $nomal;
+                        line-height: 30px;
+                        &:last-child{
+                            position: absolute;
+                            font-size: $small;
+                            right: $basic*5; top: 0;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+@include tablet{
+    #product{
+        >div{
+            width: $tcontent;
+            >figure{
+                >div{
+                    width: $big*3;
+                    height: $big*3;
+                }
+            }
+        }
+    }
+    #review{
+        li{
+            padding-left: 0;
+            figure{
+                figcaption{
+                    width: $basic*42;
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    #product{
+        >div{
+            width: $mcontent;
+            >figure{
+                flex-direction: column;
+                // justify-content: center;
+                align-items: center;
+                >div{
+                    width: $big*3;
+                    height: $big*3;
+                    margin-bottom: 40px;
+                }
+                figcaption{
+                    border-left: none;
+                    border-top: 1px solid rgba(1, 1, 1, 0.1);
+                    dl{
+                        padding-top: 30px;
+                        dt{
+                            margin-bottom: $basic*2;
+                        }
+                        dd{
+                            margin-bottom: $basic*3;
+                        }
+                    }
+                    p{
+                        button{
+                            font-size: $small;
+                            padding: 10px 15px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+    #review{
+        padding: 0 $basic*1;
+        // border-top: 1px solid rgba(1, 1, 1, 0.1);
+        li{
+            padding: 20px 0;
+            // border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+            // color: $gray;
+            figure{
+                display: flex; 
+                justify-content: space-between;
+                align-items: center;
+                >div{
+                    width: $basic*10;
+                    // background-color: #fff;
+                    height: $basic*10;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: rgba(1, 1, 1, 0.2);
+                    overflow: hidden;
+                    >img{
+                        width: 100%;
+                    }
+                }
+                figcaption{
+                    width: $basic*20;
+                    dl{
+                        position: relative;
+                        dt{
+                            font-size: $nomal;
+                            font-weight: $basic*3;
+                            margin-bottom: $basic*3;
+                        }
+                        dd{
+                            display: none;
+                            font-size: $nomal;
+                            line-height: 30px;
+                            &:last-child{
+                                position: absolute;
+                                font-size: $small;
+                                right: $basic*5; top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}

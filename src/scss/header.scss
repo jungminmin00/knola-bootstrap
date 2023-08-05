@@ -1,0 +1,85 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+header{
+    background-color: #fff;
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+}
+#wrap #header{
+    width: $content;
+    // background-color: pink;
+    @include margin;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    position: relative;
+    h1{
+        text-align: center;
+        margin-bottom: $basic*8;
+    }
+    
+    p{
+        display: none;
+        position: absolute;
+        font-size: 30px;
+        line-height: 0;
+        color: $gray;
+    }
+}
+header div{
+    p{
+        display: none;
+        position: absolute;
+        color: #fff;
+        font-size: 30px;
+    }
+    .sub{
+        position: absolute;
+        right: 410px;
+        top: $basic*8;
+        line-height: $basic*2;
+        a{
+            color: $gray;
+            font-size: 13px;
+        }
+    }
+    nav{
+        padding-bottom: 50px;
+        >ul{
+            display: flex;
+            justify-content: center;
+            >li{
+                padding-left: $big;
+                &:first-child{
+                    padding-left: 0;
+                }    
+                a{
+                    color: $gray;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: $gray;
+                }
+                &.store{
+                    ul{
+                        position: absolute;
+                        padding-top: 15px;
+                        li{
+                            padding: $basic 0;
+                            a{
+                                color: $gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @include tablet {
+//     #wrap #header{
+//         width: $tcontent;
+//     }
+// }

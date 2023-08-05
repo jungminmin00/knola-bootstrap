@@ -1,0 +1,71 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+#login{
+    background-color:#fff;
+    >div{
+        width: $content;
+        @include margin;
+        padding-top:$basic*5;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        >h3{
+            font-size: $title;
+            text-transform: uppercase;
+            letter-spacing:5px;
+            margin-bottom: $basic*5;       
+            color:$gray;     
+        }
+        >ul{
+            margin-bottom:$basic*5;
+            >li{
+                margin-bottom:$basic*3;
+                width:$basic*25;
+                display:flex;
+                justify-content:space-between;
+                >label{
+                    width: 80px;
+                    font-size:$nomal;
+                    color: $gray;
+                }
+                >input{
+                    border:1px solid rgba(1, 1, 1, 0.4);
+                }
+            }
+        }
+        >p{
+            >button{
+                border:none;
+                padding: $basic $basic*3;
+                border-radius:25px;
+                background-color:$red;
+                a{
+                    color:#fff;
+                }
+            }
+        }
+    }
+}
+
+
+
+// media query
+@include tablet{
+    #login{
+        >div{
+            width: $tcontent;
+        }
+    }
+}
+
+// media query m
+@include mobile{
+    #login{
+        >div{
+            width: $mcontent;
+            margin-bottom: 50px;
+        }
+    }
+}

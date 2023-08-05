@@ -1,0 +1,18 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+#notfound{
+    background-color: #fff;
+    padding: $basic*5 0;
+    text-align: center;
+    h3{
+        font-size: 50px;
+        margin-bottom: $basic*5;
+        font-weight: bolder;
+    }
+    p{
+        font-size: $nomal;
+    }
+
+}

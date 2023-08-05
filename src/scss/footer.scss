@@ -1,0 +1,90 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+
+#wrap>footer{
+    // background-color: pink;
+    @include margin;
+    // padding: 40px 0;
+    @include cPadding;
+    background-color: #fff;
+}
+#footer{
+    border-top: 1px solid rgba(1, 1, 1, 0.1);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    @include cPadding;
+    >dl{
+        text-align: center;
+        >dt{
+            font-size: $nomal;
+            font-weight: bold;
+            margin-bottom: $basic*3;
+        }
+        &:nth-child(1){
+            dd{
+                font-weight: bold;
+                font-size: $max;
+                margin-bottom: $basic*3;
+                &:last-child{
+                    font-size: $small;
+                    font-weight: 100;
+                }
+            }
+        }
+        &:nth-child(2){
+            font-size: small;
+            ul{
+                li{
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: $basic;
+                    dl{
+                        display: flex;
+                        color: $gray;
+                        dt{
+                            margin-right: $basic;
+                            font-weight: bold;
+                        }
+                        dd{
+                            margin-right: $basic;
+                        }
+                        &:last-child{
+                            dd{margin-right: 0;}
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-child(3){
+            font-size: $small;
+            text-align: center;
+            dd{
+                margin-bottom: $basic;
+
+            }
+        }
+    }
+}
+
+footer>.mfooter{
+    display: none;
+    border-top: 1px solid rgba(1, 1, 1, 0.1);
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    @include cPadding;
+    // background-color: pink;
+    font-size: $small;
+    >ul{
+        >li{
+            >dl{
+                display: flex;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

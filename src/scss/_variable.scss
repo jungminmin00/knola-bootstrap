@@ -1,0 +1,36 @@
+// size
+$size-content:1300px;
+$size-basic:10px;
+$size-big:100px;
+
+// color
+$gray:#444;
+$red: #c75049;
+
+// font-size
+$font-small:13px;
+$font-nomal:16px;
+$font-large:20px;
+$font-max:30px;
+
+// 단축
+$content:$size-content;
+$basic:$size-basic;
+$big:$size-big;
+
+$small:$font-small;
+$nomal:$font-nomal;
+$large:$font-large;
+$max:$font-max;
+$title:25px;
+
+// Breakpoints
+$breakpoint-mobile: 375px;
+$breakpoint-tablet: 720px;
+$breakpoint-desktop: 1300px;
+// 720px 375px
+
+// media query
+
+$mcontent:337.5px;
+$tcontent:648px;

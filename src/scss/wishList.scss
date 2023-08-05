@@ -1,0 +1,282 @@
+@use './common' as *;
+@use './mixin' as *;
+@use './variable' as *;
+
+#wishlist{
+    background-color: #fff;
+    padding-top: $basic*5;
+    h3{
+        text-align: center;
+        font-size: $large;
+        color: $gray;
+        font-weight: bold;
+        margin-bottom: $basic*3;
+    }
+    >div{
+        width: $basic*5;
+        background-color: $gray;
+        height: 2px;
+        margin: 0 auto;
+    }
+    >ul{
+        width: $content;
+        padding-top: $basic*5;
+        @include margin;
+        >li{
+            border-top: 1px solid rgba(1, 1, 1, 0.1);
+            border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+            // @include cPadding;
+            padding: $basic*5;
+            display: flex;
+            justify-content: space-between;
+            >div{
+                width: $big;
+                >img{
+                    border: 1px solid rgba(1, 1, 1, 0.1);
+                    width: $big;
+                }
+            }
+            figure{
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                color: $gray;
+                align-items: center;
+                dl{
+                    display: flex;
+                    width: $big*4;
+                    justify-content: space-between;
+                    align-items: center;
+                    dt{
+                        width: 70%;
+                        font-size: $large;
+                    }
+                    dd{
+                        font-size: $nomal;
+                    }
+                }
+                >div{
+                    width: 80px;
+                    display: flex;
+                    align-items: center;
+                    .countNum{
+                        
+                        margin: 0 15px;
+                    }
+                }
+                >p{
+                    
+                    button{
+                        border: none;
+                        font-size: $nomal;
+                        padding: 10px 30px;
+                        border-radius: 20px;
+                        background-color: $red;
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
+                        >span{
+                            &.trashIcon{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include tablet{
+    #wishlist{
+        // background-color: #fff;
+        // padding-top: $basic*5;
+        h3{
+            // text-align: center;
+            // font-size: $large;
+            // color: $gray;
+            // font-weight: bold;
+            // margin-bottom: $basic*3;
+        }
+        >div{
+            // width: $basic*5;
+            // background-color: $gray;
+            // height: 2px;
+            // margin: 0 auto;
+        }
+        >ul{
+            width: $tcontent;
+            // padding-top: $basic*5;
+            // @include margin;
+            >li{
+                // border-top: 1px solid rgba(1, 1, 1, 0.1);
+                // border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+                // @include cPadding;
+                padding: $basic*1;
+                display: flex;
+                justify-content: space-between;
+                >div{
+                    width: $big;
+                    >img{
+                        border: 1px solid rgba(1, 1, 1, 0.1);
+                        width: $big;
+                    }
+                }
+                figure{
+                     width: 80%;
+                    display: flex;
+                    justify-content: space-between;
+                    color: $gray;
+                    align-items: center;
+                    dl{
+                        display: flex;
+                        width: $basic*34;
+                        justify-content: flex-start;
+                        align-items: center;
+                        dt{
+                            font-size: $nomal;
+                            font-weight: bold;
+                        }
+                        dd{
+                            font-size: $nomal;
+                        }
+                    }
+                    >div{
+                        width: 80px;
+                        display: flex;
+                        align-items: center;
+                        .countNum{
+                            
+                            margin: 0 10px;
+                        }
+                    }
+                    >p{
+                        button{
+                            border: none;
+                            // width: 80px;
+                            font-size: $small;
+                            // font-weight: bold;
+                            padding: 10px 20px;
+                            border-radius: 20px;
+                            background-color: $red;
+                            color: #fff;
+                            font-size: 18px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            >span{
+                                &:first-child{
+                                    display: none;
+                                }
+                                &.trashIcon{
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile{
+    #wishlist{
+        // background-color: #fff;
+        // padding-top: $basic*5;
+        h3{
+            // text-align: center;
+            // font-size: $large;
+            // color: $gray;
+            // font-weight: bold;
+            // margin-bottom: $basic*3;
+        }
+        >div{
+            // width: $basic*5;
+            // background-color: $gray;
+            // height: 2px;
+            // margin: 0 auto;
+        }
+        >ul{
+            width: $mcontent;
+            // padding-top: $basic*5;
+            // @include margin;
+            >li{
+                // border-top: 1px solid rgba(1, 1, 1, 0.1);
+                // border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+                // @include cPadding;
+                padding: $basic*1;
+                display: flex;
+                justify-content: space-between;
+                >div{
+                    width: $basic*8;
+                    >img{
+                        border: 1px solid rgba(1, 1, 1, 0.1);
+                        width: $basic*8;
+                    }
+                }
+                figure{
+                    width: 80%;
+                    display: flex;
+                    justify-content: space-between;
+                    color: $gray;
+                    align-items: center;
+                    dl{
+                        display: flex;
+                        flex-direction: column;
+                        width: $basic*14;
+                        // justify-content: center;
+                        // align-items: center;
+                        text-align: center;
+                        
+                        dt{
+                            font-size: $small;
+                            line-height: 18px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                        }
+                        dd{
+                            font-size: $small;
+                        }
+                    }
+                    >div{
+                        width: 70px;
+                        display: flex;
+                        align-items: center;
+                        .countNum{
+                            
+                            margin: 0 5px;
+                        }
+                    }
+                    >p{
+                        button{
+                            border: none;
+                            // width: 80px;
+                            font-size: $small;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            // font-weight: bold;
+                            padding: 10px 10px;
+                            border-radius: 20px;
+                            background-color: $red;
+                            color: #fff;
+                            margin-left: 5px;
+                            font-size: 15px;
+                            >span{
+                                &:first-child{
+                                    display: none;
+                                }
+                                &.trashIcon{
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
